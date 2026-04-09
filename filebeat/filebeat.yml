@@ -1,0 +1,38 @@
+filebeat.inputs:
+  - type: filestream
+    id: mist-webhooks
+    enabled: true
+    paths:
+      - /var/log/mist-webhooks/*/*/*.jsonl
+
+    parsers:
+      - ndjson:
+          target: ""
+          overwrite_keys: true
+          add_error_key: true
+
+output.elasticsearch:
+  hosts: ["https://192.168.10.10:9200"]
+  username: "filebeat_ingest"
+  password: "BYTT_DENNE"
+  ssl.certificate_authorities: ["/etc/filebeat/certs/http_ca.crt"]
+  index: "%{[data_stream.type]}-%{[data_stream.dataset]}-%{[data_stream.namespace]}"
+
+setup.ilm.enabled: false
+setup.template.enabled: false
+
+logging.level: info
+
+logging.to_files: true
+logging.files:
+  path: /var/log/filebeat
+  name: filebeat
+  keepfiles: 10
+  permissions: 0600
+
+logging.event_data.to_files: true
+logging.event_data.files:
+  path: /var/log/filebeat
+  name: filebeat-events-data
+  keepfiles: 10
+  permissions: 0600

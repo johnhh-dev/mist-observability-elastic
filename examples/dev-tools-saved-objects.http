@@ -1,0 +1,12 @@
+### Example only: create a combined dataview in Kibana Dev Tools
+POST kbn:/api/data_views/data_view
+{
+  "data_view": {
+    "id": "mist-v2-overview",
+    "name": "Mist v2 Overview",
+    "title": "logs-mist.*-v2-prod",
+    "timeFieldName": "@timestamp",
+    "allowNoIndex": true
+  },
+  "override": true
+}

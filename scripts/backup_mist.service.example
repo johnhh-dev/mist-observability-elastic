@@ -1,0 +1,11 @@
+[Unit]
+Description=Mist API backup snapshot
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/mist-observability
+Environment="MIST_BASE_URL=https://api.eu.mist.com"
+Environment="MIST_ORG_ID=BYTT_DENNE"
+EnvironmentFile=/opt/mist-observability/.env
+ExecStart=/usr/bin/python3 /opt/mist-observability/scripts/backup_mist.py

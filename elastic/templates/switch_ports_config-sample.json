@@ -1,0 +1,63 @@
+{
+  "@timestamp": "2026-04-02T20:00:00Z",
+  "data_stream": {
+    "type": "logs",
+    "dataset": "mist.switch_ports_config-v1",
+    "namespace": "prod"
+  },
+  "event": {
+    "module": "mist",
+    "dataset": "mist.switch_ports_config-v1",
+    "kind": "state",
+    "category": ["configuration"],
+    "type": ["info"]
+  },
+  "labels": {
+    "customer": "dnt"
+  },
+  "organization": {
+    "id": "66f088e7-e674-4b59-a435-401cdc75e731"
+  },
+  "site": {
+    "id": "82bd73c9-ed2b-4413-a9ce-90ad25afd605",
+    "name": "Bjerke Travbane"
+  },
+  "observer": {
+    "type": "switch",
+    "name": "dnt-bjerke-tribune-sw-1o",
+    "mac": "2c4c15ec846f",
+    "product": "EX4100-F-24P"
+  },
+  "mist": {
+    "topic": "switch-ports-config",
+    "snapshot": {
+      "source": "mist-api",
+      "collected_at": "2026-04-02T20:00:00Z"
+    },
+    "switch_port": {
+      "switch_id": "mist-switch-id",
+      "switch_name": "dnt-bjerke-tribune-sw-1o",
+      "port_id": "ge-0/0/9",
+      "port_name": "ge-0/0/9",
+      "port_index": 9,
+      "description": "AP uplink",
+      "enabled": true,
+      "status": "up",
+      "speed": "1g",
+      "duplex": "full",
+      "poe_enabled": true,
+      "stp_edge": true,
+      "l2_mode": "access",
+      "native_vlan_id": 20,
+      "voice_vlan_id": null,
+      "port_profile": {
+        "name": "AP-Access",
+        "id": "mist-port-profile-id",
+        "scope": "site"
+      },
+      "profile_inherited": true,
+      "template_name": "DNT-Switch-Template",
+      "template_id": "mist-template-id"
+    }
+  }
+}
