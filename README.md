@@ -169,9 +169,7 @@ sequenceDiagram
 
 ---
 
-## ✅ Confirmed in the Current DNT Setup
-
-The repository and supplied screenshots confirm the following:
+## ✅ Current Setup
 
 - webhook endpoint: `https://mist.labmetrics.dev/webhook/dnt`
 - webhook type: `HTTP POST`
